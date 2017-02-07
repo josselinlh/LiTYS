@@ -1,0 +1,65 @@
+<html><head>
+  <title>Listen To Your Sun</title>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+  	<!-- your css file -->
+  	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+  	<!-- Include awesome font for icons -->
+  	<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+
+
+  	<!-- Include Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+	<!-- Deezer SDK -->
+	<script src="http://e-cdn-files.deezer.com/js/min/dz.js"></script>
+
+</head>
+<body>
+
+
+	<div class="container-fluid">
+
+		<h1>Listen To Your Sun (LiTYS)</h1>
+		<p>LiTYS est un client deezer qui va adapté votre playlist aux données de luminosité reçues de vos objets connectés.</p>
+		<p>Juste avant de dormir préfèrez écouter des musiques calmes grâce à LiTYS!</p>
+		<p>Vous voulez avoir la pêche au réveil LiTYS adapte votre écoute pour vous!</p>
+
+
+		<div id="dz-root"></div>
+		<div id="player" style="width:100%;" align="center"></div>
+
+
+	</div>
+
+<script>
+
+
+	DZ.init({
+		appId  : '8',
+		channelUrl : 'http://developers.deezer.com/examples/channel.php',
+		player : {
+			container : 'player',
+			playlist : true,
+			width : 650,
+			height : 300,
+			onload : onPlayerLoaded
+
+		}
+	});
+
+
+	function onPlayerLoaded()
+	{
+		DZ.player.playTracks([3135557, 1152226]);
+	}
+
+</script>
+
+</body>
+</html>
